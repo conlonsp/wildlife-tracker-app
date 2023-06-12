@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :donations
   resources :user_organizations
   resources :projects
   resources :organizations
