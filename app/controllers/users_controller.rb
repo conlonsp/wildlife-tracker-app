@@ -20,4 +20,8 @@ class UsersController < ApplicationController
   def user_unprocessable(e)
     render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
   end
+
+  def user_not_found
+    render json: { errors: ['User not found'] }, status: :unauthorized
+  end
 end
