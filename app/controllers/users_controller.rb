@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  rescue_from ActiveRecord::RecordInvalid, with: :user_unprocessable
+
   def create
     user = User.create!(user_params)
     session[:user_id] = user.id
