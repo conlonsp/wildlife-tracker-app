@@ -18,4 +18,8 @@ class OrganizationsController < ApplicationController
   def org_params
     params.permit(:name, :mission, :location)
   end
+
+  def org_unprocessable(e)
+    render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
+  end
 end
