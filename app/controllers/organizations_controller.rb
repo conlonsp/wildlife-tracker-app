@@ -12,4 +12,10 @@ class OrganizationsController < ApplicationController
     org = Organization.create!(org_params)
     render json: org, status: :created
   end
+
+  private
+
+  def org_params
+    params.permit(:name, :mission, :location)
+  end
 end
