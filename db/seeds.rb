@@ -18,22 +18,22 @@ user2 = User.create({
 
 ## User_Organizations ##
 
-user_org1 = User_organization.create({
+user_org1 = UserOrganization.create({
   user_id: 1,
   organization_id: 1
 })
 
-user_org2 = User_organization.create({
+user_org2 = UserOrganization.create({
   user_id: 1,
   organization_id: 2
 })
 
-user_org3 = User_organization.create({
+user_org3 = UserOrganization.create({
   user_id: 2,
   organization_id: 3
 })
 
-user_org4 = User_organization.create({
+user_org4 = UserOrganization.create({
   user_id: 2,
   organization_id: 4
 })
