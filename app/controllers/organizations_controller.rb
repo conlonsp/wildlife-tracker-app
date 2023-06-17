@@ -15,6 +15,12 @@ class OrganizationsController < ApplicationController
     render json: org, status: :created
   end
 
+  def update
+    org = Organization.find(params[:id])
+    org.update!(org_params)
+    render json: org, status: :accepted
+  end
+
   private
 
   def org_params
