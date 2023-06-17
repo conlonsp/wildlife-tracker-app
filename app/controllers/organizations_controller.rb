@@ -1,5 +1,10 @@
 class OrganizationsController < ApplicationController
   def index
-    render json: Organizations.all, status: :ok
+    render json: Organization.all, status: :ok
+  end
+
+  def show
+    org = Organization.find(params[:id])
+    render json: org, status: :ok
   end
 end
