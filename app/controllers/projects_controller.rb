@@ -20,4 +20,8 @@ class ProjectsController < ApplicationController
     params.permit(:name, :description, :start_date, :end_date, :location, :organization_id)
   end
 
+  def proj_unprocessable(e)
+    render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
+  end
+
 end
