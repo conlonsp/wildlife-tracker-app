@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :proj_unprocessable
+  rescue_from ActiveRecord::RecordNotFound, with: :proj_not_found
 
   def index
     render json: Project.all, status: :ok
