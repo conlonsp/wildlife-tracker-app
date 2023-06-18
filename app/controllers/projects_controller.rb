@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity
+  rescue_from ActiveRecord::RecordInvalid, with: :proj_unprocessable
 
   def index
     render json: Project.all, status: :ok
