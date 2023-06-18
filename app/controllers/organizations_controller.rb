@@ -1,5 +1,6 @@
 class OrganizationsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :org_unprocessable
+  rescue_from ActiveRecord::RecordNotFound, with: :org_not_found
 
   def index
     render json: Organization.all, status: :ok
