@@ -22,7 +22,7 @@ class OrganizationsController < ApplicationController
   end
 
   def destroy
-    org = Organization.find(params(:id))
+    org = Organization.find(params[:id])
     org.destroy
     head :no_content
   end
