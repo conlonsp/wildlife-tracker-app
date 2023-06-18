@@ -9,4 +9,9 @@ class ProjectsController < ApplicationController
     render json: proj, status: :ok
   end
 
+  def create
+    proj = Project.create!(proj_params)
+    render json: proj, status: :created
+  end
+  
 end
