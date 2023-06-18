@@ -36,4 +36,8 @@ class OrganizationsController < ApplicationController
   def org_unprocessable(e)
     render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
   end
+
+  def org_not_found
+    render json: { errors: ["Organization not found"] }, status: :not_found
+  end
 end
