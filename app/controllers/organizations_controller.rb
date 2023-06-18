@@ -21,6 +21,12 @@ class OrganizationsController < ApplicationController
     render json: org, status: :accepted
   end
 
+  def destroy
+    org = Organization.find(params(:id))
+    org.destroy
+    head :no_content
+  end
+
   private
 
   def org_params
