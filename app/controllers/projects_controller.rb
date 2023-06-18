@@ -13,5 +13,11 @@ class ProjectsController < ApplicationController
     proj = Project.create!(proj_params)
     render json: proj, status: :created
   end
-  
+
+  private
+
+  def proj_params
+    params.permit(:name, :description, :start_date, :end_date, :location)
+  end
+
 end
