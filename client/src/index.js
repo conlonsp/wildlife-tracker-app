@@ -1,20 +1,19 @@
-import React, { createContext, useState } from 'react';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import Context from './Context';
 
-export const UserContext = createContext(null)
-
-const [user, setUser] = useState(null)
+// const [user, setUser] = useState(null)
 
 ReactDOM.render(
-  <UserContext.Provider value={[user, setUser]}>
+  <Context>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </UserContext.Provider>,
+  </Context>,
   document.getElementById('root')
 );
 

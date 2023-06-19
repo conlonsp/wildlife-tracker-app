@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { UserContext } from '..';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../Context';
 
 import logo from '../logo.svg';
 import '../App.css';
@@ -7,8 +7,7 @@ import '../App.css';
 import LoginSignup from '../pages/LoginSignup';
 
 function App() {
-  const [user, setUser] = useContext(UserContext)
-  
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -25,7 +24,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <LoginSignup setUser={setUser} />
+      <LoginSignup />
     </div>
   );
 }

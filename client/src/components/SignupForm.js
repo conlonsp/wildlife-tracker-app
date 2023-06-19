@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { UserContext } from "../Context";
 
-function SignupForm({ setToLogin, setUser }) {
+function SignupForm({ setToLogin }) {
   const [newUser, setNewUser] = useState({
     username: '',
     password: '',
@@ -9,6 +10,8 @@ function SignupForm({ setToLogin, setUser }) {
     bio: ''
   })
   const [errors, setErrors] = useState([])
+  
+  const { setUser } = useContext(UserContext)
 
   function handleChange(e) {
     setNewUser({
