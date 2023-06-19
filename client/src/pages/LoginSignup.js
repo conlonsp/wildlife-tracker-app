@@ -7,7 +7,7 @@ function LoginSignup() {
 
   return (
     <div>
-
+      {toLogin ? <LoginForm /> : <SignupForm />}
     </div>
   )
 }
