@@ -5,10 +5,15 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
+const UserContext = createContext(null)
+const [user, setUser] = useState(null)
+
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <UserContext.Provider value={[user, setUser]}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UserContext.Provider>,
   document.getElementById('root')
 );
 
