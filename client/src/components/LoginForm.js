@@ -1,8 +1,11 @@
 import React from "react";
 
-function LoginForm() {
+function LoginForm({ setToLogin }) {
   return (
-    <h1>LoginForm</h1>
+    <div>
+      <h1>LoginForm</h1>
+      <button onClick={()=>setToLogin(false)}>Signup</button>
+    </div>
   )
 }
 
