@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '..';
 
 import logo from '../logo.svg';
 import '../App.css';
@@ -6,10 +7,8 @@ import '../App.css';
 import LoginSignup from '../pages/LoginSignup';
 
 function App() {
-  const [user, setUser] = useState(null)
-
+  const [user, setUser] = useContext(UserContext)
   
-
   return (
     <div className="App">
       {/* <header className="App-header">

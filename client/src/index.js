@@ -5,7 +5,8 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
-const UserContext = createContext(null)
+export const UserContext = createContext(null)
+
 const [user, setUser] = useState(null)
 
 ReactDOM.render(
