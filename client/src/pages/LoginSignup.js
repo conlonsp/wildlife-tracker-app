@@ -7,7 +7,11 @@ function LoginSignup() {
 
   return (
     <div>
-      {toLogin ? <LoginForm /> : <SignupForm />}
+      {toLogin ?
+        <LoginForm setToLogin={setToLogin}/>
+      :
+        <SignupForm setToLogin={setToLogin}/>
+      }
     </div>
   )
 }
