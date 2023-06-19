@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { UserContext } from '../Context';
 
 import logo from '../logo.svg';
@@ -7,6 +7,17 @@ import '../App.css';
 import LoginSignup from '../pages/LoginSignup';
 
 function App() {
+  const { user, setUser } = useContext(UserContext)
+
+  useEffect(() => {
+    fetch('/me').then(r => {
+      if(r.ok) {
+        r.json().then(user => {
+          setUser(user)
+        })
+      }
+    })
+  }, [])
 
   return (
     <div className="App">
