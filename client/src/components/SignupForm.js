@@ -50,7 +50,7 @@ function SignupForm({ setToLogin, setUser }) {
   return (
     <div>
       <h1>SignupForm</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type='text'
           name='username'
@@ -86,7 +86,7 @@ function SignupForm({ setToLogin, setUser }) {
           value={newUser.bio}
           onChange={handleChange}
         />
-        <button>Signup</button>
+        <button type='submit'>Signup</button>
       </form>
       <button onClick={()=>setToLogin(true)}>Login</button>
     </div>
