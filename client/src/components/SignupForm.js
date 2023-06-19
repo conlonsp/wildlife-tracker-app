@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SignupForm({ setToLogin }) {
+function SignupForm({ setToLogin, setUser }) {
   const [newUser, setNewUser] = useState({
     username: '',
     password: '',
@@ -13,6 +13,36 @@ function SignupForm({ setToLogin }) {
     setNewUser({
       ...newUser,
       [e.target.name]: e.target.value
+    })
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('/signup', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        username: newUser.username,
+        password: newUser.password,
+        password_confirmation: newUser.passwordConfirmation,
+        avatar_url: newUser.avatarUrl,
+        bio: newUser.bio
+      }),
+    }).then(r => {
+      if (r.ok) {
+        r.json().then(user => {
+          setUser(user)
+          setNewUser({
+            username: '',
+            password: '',
+            passwordConfirmation: '',
+            avatarUrl: '',
+            bio: ''
+          })
+        })
+      } else {
+        r.json().then(err => setErrors(err.errors))
+      }
     })
   }
 
