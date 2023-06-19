@@ -8,6 +8,8 @@ import LoginSignup from '../pages/LoginSignup';
 function App() {
   const [user, setUser] = useState(null)
 
+  console.log(user)
+
   return (
     <div className="App">
       {/* <header className="App-header">

@@ -59,27 +59,27 @@ function SignupForm({ setToLogin, setUser }) {
           onChange={handleChange}
         />
         <input
-          type='text'
+          type='password'
           name='password'
           placeholder='Password'
           value={newUser.password}
           onChange={handleChange}
         />
         <input
-          type='text'
-          name='password_confirmation'
+          type='password'
+          name='passwordConfirmation'
           placeholder="Password Confirmation"
           value={newUser.passwordConfirmation}
           onChange={handleChange}
         />
         <input
           type='text'
-          name='avatar_url'
+          name='avatarUrl'
           placeholder="Avatar URL"
           value={newUser.avatarUrl}
           onChange={handleChange}
         />
-        <input
+        <textarea
           type='text'
           name='bio'
           placeholder="Bio"
