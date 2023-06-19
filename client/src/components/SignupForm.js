@@ -8,6 +8,7 @@ function SignupForm({ setToLogin, setUser }) {
     avatarUrl: '',
     bio: ''
   })
+  const [errors, setErrors] = useState([])
 
   function handleChange(e) {
     setNewUser({
