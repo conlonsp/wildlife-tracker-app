@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 function SignupForm({ setToLogin }) {
+  const [newUser, setNewUser] = useState({
+    username: '',
+    password: '',
+    passwordConfirmation: '',
+    avatarUrl: '',
+    bio: ''
+  })
+
   return (
     <div>
       <h1>SignupForm</h1>
