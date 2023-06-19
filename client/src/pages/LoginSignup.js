@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function LoginSignup() {
+  const [toLogin, setToLogin] = useState(false)
+  
   return (
-    <h1>LoginSignup</h1>
+    <div>
+
+    </div>
   )
 }
 
