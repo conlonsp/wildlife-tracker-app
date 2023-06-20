@@ -41,7 +41,7 @@ function LoginForm({ setToLogin }) {
   return (
     <div>
       <h1>LoginForm</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type='text'
           name='username'
