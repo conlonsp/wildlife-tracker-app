@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 function Header() {
   const { user, setUser } = useContext(UserContext)
 
+  const navigate = useNavigate()
+
   function handleLogout() {
     if(user) {
       fetch('/logout', { method: "DELETE" }).then(r => {
