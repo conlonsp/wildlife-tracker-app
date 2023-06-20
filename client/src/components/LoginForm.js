@@ -59,6 +59,11 @@ function LoginForm({ setToLogin }) {
         />
         <button type='submit'>Login</button>
       </form>
+      {errors.map(err => {
+        return (
+          <p key={err} style={{color: 'red'}}>{err}</p>
+        )
+      })}
       <button onClick={()=>setToLogin(false)}>Signup</button>
     </div>
   )
