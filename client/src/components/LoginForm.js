@@ -9,6 +9,13 @@ function LoginForm({ setToLogin }) {
     password: ""
   })
 
+  function handleChange(e) {
+    setLogUser({
+      ...logUser,
+      [e.target.name]: e.target.value
+    })
+  }
+
   return (
     <div>
       <h1>LoginForm</h1>
