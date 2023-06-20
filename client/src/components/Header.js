@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import { UserContext } from "../Context";
 
 function Header() {
+  const { user, setUser } = useContext(UserContext)
   
   return (
     <div>
