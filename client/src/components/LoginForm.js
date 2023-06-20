@@ -34,7 +34,7 @@ function LoginForm({ setToLogin }) {
           value={logUser.password}
           onChange={handleChange}
         />
-        <button>Login</button>
+        <button type='submit'>Login</button>
       </form>
       <button onClick={()=>setToLogin(false)}>Signup</button>
     </div>
