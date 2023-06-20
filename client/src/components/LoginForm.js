@@ -17,11 +17,13 @@ function LoginForm({ setToLogin }) {
           type='text'
           name='username'
           placeholder="Username"
+          value={logUser.username}
         />
         <input
           type='password'
           name='password'
           placeholder="Password"
+          value={logUser.password}
         />
         <button>Login</button>
       </form>
