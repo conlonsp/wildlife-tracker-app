@@ -4,6 +4,11 @@ import { UserContext } from "../Context";
 function LoginForm({ setToLogin }) {
   const { setUser } = useContext(UserContext)
 
+  const [logUser, setLogUser] = useState({
+    username: "",
+    password: ""
+  })
+
   return (
     <div>
       <h1>LoginForm</h1>
