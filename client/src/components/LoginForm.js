@@ -16,6 +16,28 @@ function LoginForm({ setToLogin }) {
     })
   }
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('/login', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        username: logUser.username,
+        password: logUser.password
+      })
+    }).then(r => {
+      if(r.ok) {
+        r.json().then(user => {
+          setUser(user)
+        })
+      } else {
+        r.json().then(err => {
+          setErrors(err.errors)
+        })
+      }
+    })
+  }
+
   return (
     <div>
       <h1>LoginForm</h1>
