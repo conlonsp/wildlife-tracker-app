@@ -7,6 +7,7 @@ import '../App.css';
 
 import Dashboard from '../pages/Dashboard';
 import LoginSignup from '../pages/LoginSignup';
+import Header from './Header';
 
 function App() {
   const { user, setUser } = useContext(UserContext)
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path='/' element={
           <Dashboard />
