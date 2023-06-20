@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import NavBar from "./NavBar";
+import { UserContext } from "../Context";
 
 function Header() {
   
