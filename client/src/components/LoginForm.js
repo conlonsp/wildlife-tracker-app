@@ -25,12 +25,14 @@ function LoginForm({ setToLogin }) {
           name='username'
           placeholder="Username"
           value={logUser.username}
+          onChange={handleChange}
         />
         <input
           type='password'
           name='password'
           placeholder="Password"
           value={logUser.password}
+          onChange={handleChange}
         />
         <button>Login</button>
       </form>
