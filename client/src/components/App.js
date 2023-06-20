@@ -20,6 +20,7 @@ function App() {
     })
   }, [])
 
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -36,6 +37,11 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <Routes>
+        <Route path='/dashboard' element={
+          <Dashboard />
+        }/>
+      </Routes>
       <LoginSignup />
     </div>
   );
