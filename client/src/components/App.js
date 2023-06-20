@@ -21,13 +21,9 @@ function App() {
     })
   }, [])
 
-  if(!user) return (
-    <Routes>
-      <Route path='/loginsignup' element={
-        <LoginSignup/>
-      }/>
-    </Routes>
-  )
+  // if(!user) return (
+  //   <LoginSignup />
+  // )
 
   return (
     <div className="App">
@@ -46,8 +42,11 @@ function App() {
         </a>
       </header> */}
       <Routes>
-        <Route path='/dashboard' element={
+        <Route path='/' element={
           <Dashboard />
+        }/>
+        <Route path='/loginsignup' element={
+          <LoginSignup/>
         }/>
       </Routes>
     </div>
