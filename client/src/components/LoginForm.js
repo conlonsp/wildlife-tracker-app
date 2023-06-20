@@ -8,6 +8,7 @@ function LoginForm({ setToLogin }) {
     username: "",
     password: ""
   })
+  const [errors, setErrors] = useState([])
 
   function handleChange(e) {
     setLogUser({
