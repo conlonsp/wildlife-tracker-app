@@ -30,6 +30,10 @@ function LoginForm({ setToLogin }) {
       if(r.ok) {
         r.json().then(user => {
           setUser(user)
+          setLogUser({
+            username: "",
+            password: ""
+          })
         })
       } else {
         r.json().then(err => {
