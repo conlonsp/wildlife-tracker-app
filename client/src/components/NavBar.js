@@ -12,6 +12,11 @@ function NavBar() {
       >
         Dashboard
       </NavLink>
+      <NavLink
+        to='/about'
+      >
+        About
+      </NavLink>
     </div>
   )
 }
