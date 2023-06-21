@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../Context";
+import { useNavigate } from "react-router-dom";
 
 function SignupForm({ setToLogin }) {
   const [newUser, setNewUser] = useState({
@@ -12,6 +13,8 @@ function SignupForm({ setToLogin }) {
   const [errors, setErrors] = useState([])
   
   const { setUser } = useContext(UserContext)
+
+  const navigate = useNavigate()
 
   function handleChange(e) {
     setNewUser({
@@ -43,6 +46,7 @@ function SignupForm({ setToLogin }) {
             avatarUrl: '',
             bio: ''
           })
+          navigate('/')
         })
       } else {
         r.json().then(err => setErrors(err.errors))
