@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../Context";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm({ setToLogin }) {
   const { setUser } = useContext(UserContext)
@@ -9,6 +10,8 @@ function LoginForm({ setToLogin }) {
     password: ""
   })
   const [errors, setErrors] = useState([])
+
+  const navigate = useNavigate()
 
   function handleChange(e) {
     setLogUser({
@@ -34,6 +37,7 @@ function LoginForm({ setToLogin }) {
             username: "",
             password: ""
           })
+          navigate('/')
         })
       } else {
         r.json().then(err => {
