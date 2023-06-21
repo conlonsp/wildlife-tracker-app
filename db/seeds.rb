@@ -41,142 +41,196 @@ user_org4 = UserOrganization.create({
 ## Organizations ##
 
 org1 = Organization.create({
-  name: "Save the Forests",
-  mission: "Our mission is to protect the preexisting forests across the globe, while also replanting trees to recoup the losses sustained through logging ventures.",
-  location: "British Colombia, Canada"
+  name: "WildEarth Alliance",
+  mission: "Working towards protecting and restoring endangered species and their habitats globally.",
+  location: "San Francisco, California, USA"
 })
 
 org2 = Organization.create({
-  name: "Save the Rivers",
-  mission: "We strive to keep our rivers clean from pollution, and to keep their waters where they belong through education.  We aim to educate people on safe and ethical water diversion practices for agriculture or engineering to increase the longevity of our rivers and their ecosystems.",
-  location: "Mississippi, USA"
+  name: "Earth Guardians",
+  mission: "Empowering youth to become environmental leaders and create sustainable change.",
+  location: "Boulder, Colorado, USA"
 })
 
 org3 = Organization.create({
-  name: "Save the Oceans",
-  mission: "Here at Save the Oceans, we aim to educate the masses on overfishing, pollution, ocean acidification and much more and how these things affect our oceans.  Our planet is compromised of 70% water, where much of those waters is held in our oceans.  To keep us healthy, and the lives of many othe plants and animals across the globe, we need to prioritize our Ocean's health.",
-  location: "Maldives"
+  name: "Amazon Rainforest Trust",
+  mission: "Preserving the biodiversity and cultural heritage of the Amazon rainforest through conservation initiatives.",
+  location: "Manaus, Amazonas, Brazil"
 })
 
 org4 = Organization.create({
-  name: "Save the Bees",
-  mission: "We want to save all of the bees that we can because they're pretty cool and we like them a lot and need them to stay.  That's why.",
-  location: "Great Plains, USA"
+  name: "Wildlife Conservation Society",
+  mission: "Saving wildlife and wild places by implementing science-based conservation efforts worldwide.",
+  location: "New York City, New York, USA"
 })
 
 org5 = Organization.create({
-  name: "Save the Polar Bears",
-  mission: "We want to save all of the polar bears that we can because they're pretty cool and we like them a lot and need them to stay.  That's why.",
-  location: "Antartica"
+  name: "African Wildlife Foundation",
+  mission: "Ensuring the protection of Africa's unique wildlife and wildlands, promoting sustainable development.",
+  location: "Nairobi, Kenya"
 })
 
 org6 = Organization.create({
-  name: "Guardians of Earth",
-  mission: "Guarding the Earth day and night can get pretty tiresome but somebody has to do it.  Why don't you come along and help us?",
-  location: "Space Sector ZX353"
+  name: "Great Barrier Reef Foundation",
+  mission: "Collaborating to protect and restore the Great Barrier Reef through innovative research and conservation projects.",
+  location: "Brisbane, Queensland, Australia"
 })
 
 org7 = Organization.create({
-  name: "Green Machine",
-  mission: "Lean, green fighting machine.  That's who we are and that's what we're all about.  Come and get it!",
-  location: "Somewhere in the Amazon"
+  name: "International Rhino Foundation",
+  mission: "Dedicated to the survival of the world's rhino species through field programs and community engagement.",
+  location: "Asheville, North Carolina, USA"
 })
 
 org8 = Organization.create({
-  name: "Wetland Protectors",
-  mission: "We want to preserve every wetland around the world that we can because they're pretty cool and we like them a lot and need them to stay.  That's why.",
-  location: "Wetland USA"
+  name: "Sea Turtle Conservancy",
+  mission: "Protecting sea turtles through research, conservation efforts, and community outreach for a healthier marine ecosystem.",
+  location: "Gainesville, Florida, USA"
 })
 
 ## Projects ##
 
 proj1 = Project.create({
-  name: "Project A",
-  description: "This project is unlike any other project and definitely way better.  Donate money to our organization to find out more.",
-  location: "111 First Street",
-  start_date: "12/20/22",
-  end_date: "12/19/23",
+  name: "Tiger Conservation Initiative",
+  description: "Collaborating with local communities to protect and restore tiger habitats in Southeast Asia.",
+  location: "Sumatra, Indonesia",
+  start_date: "2023-08-01",
+  end_date: "2024-07-31",
   organization_id: 1
 })
 
 proj2 = Project.create({
-  name: "Project B",
-  description: "We know the people at Project A think that they're doing the best work.  But here at Project B, we know where the trouble lies and how to help.  Donate money to our organization to find out more.",
-  location: "22 Second Ave",
-  start_date: "3/3/20",
-  end_date: "2/28/25",
-  organization_id: 2
+  name: "Raptor Rehabilitation Program",
+  description: "Rehabilitating injured raptors and releasing them back into the wild, ensuring their survival.",
+  location: "Rocky Mountains, Colorado, USA",
+  start_date: "2023-09-15",
+  end_date: "2024-03-15",
+  organization_id: 1
 })
 
 proj3 = Project.create({
-  name: "Project C",
-  description: "This project is a lot like the other project and probably not any better or worse.  Donate money to our organization or don't.  We're just happy to help.",
-  location: "3 C St",
-  start_date: "5/1/23",
-  end_date: "8/1/23",
-  organization_id: 3
+  name: "Plastic Pollution Awareness Campaign",
+  description: "Educating communities about the harmful impacts of plastic pollution and promoting sustainable alternatives.",
+  location: "Coastal regions worldwide",
+  start_date: "2023-07-01",
+  end_date: "2023-12-31",
+  organization_id: 2
 })
 
 proj4 = Project.create({
-  name: "Project D",
-  description: "The people at Project C tend to be pretty indifferent towards achieving any goals.  We branched off to help them accomplish their goals",
-  location: "40 Dee Drive",
-  start_date: "5/5/23",
-  end_date: "8/5/23",
-  organization_id: 4
+  name: "Urban Garden Initiative",
+  description: "Establishing community gardens in urban areas to promote local food production and reconnect people with nature.",
+  location: "Various cities across the United States",
+  start_date: "2023-08-15",
+  end_date: "2024-08-14",
+  organization_id: 2
 })
 
 proj5 = Project.create({
-  name: "Project E",
-  description: "We help the other projects stay motivated.  Nothing motivates us more than motivation.  Put that on a resume.",
-  location: "33 Easy St",
-  start_date: "1/1/15",
-  end_date: "1/1/25",
-  organization_id: 5
-})
-
-proj6 = Project.create({
-  name: "Project F",
-  description: "F is for friends that do stuff together. U is for you and me. N is for anywhere anytime at all here in the deep blue sea",
-  location: "Deep blue sea",
-  start_date: "Forever",
-  end_date: "And Ever",
-  organization_id: 6
-})
-
-proj7 = Project.create({
-  name: "Project G",
-  description: "Whoooooaaa we're halfway thheeerrreeeee.  Ooooooooohhhhh we're living on a praaaaayeeeeeeer.",
-  location: "Heaven",
-  start_date: "2/7/1994",
-  end_date: "6/15/23",
-  organization_id: 7
-})
-
-proj8 = Project.create({
-  name: "Project H",
-  description: "Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.  Help.",
-  location: "Help I'm stuck",
-  start_date: "5/2/2000",
-  end_date: "Undetermined",
-  organization_id: 8
-})
-
-proj9 = Project.create({
-  name: "Project I",
-  description: "I want to help Project H, but they never said where they're located.  All they said was, 'Help I'm stuck.'  How's anyone supposed to help them??",
-  location: "Looking for Project H",
-  start_date: "5/3/2000",
-  end_date: "Undetermined",
+  name: "Rainforest Conservation Patrol",
+  description: "Conducting regular patrols to deter illegal activities and protect the fragile ecosystems of the Amazon rainforest.",
+  location: "Manaus, Amazonas, Brazil",
+  start_date: "2023-09-01",
+  end_date: "2024-08-31",
   organization_id: 3
 })
 
-proj10 = Project.create({
-  name: "Project J",
-  description: "I think all of these projects are a JOKE.  Have you read any of their statements?  Absolutely ridiculous.  This should be against the law.",
-  location: "1427 John Drive",
-  start_date: "3/4/2005",
-  end_date: "3/3/2025",
+proj6 = Project.create({
+  name: "Indigenous Communities Support Program",
+  description: "Empowering indigenous communities to sustainably manage and preserve their ancestral lands within the Amazon rainforest.",
+  location: "Rondônia, Brazil",
+  start_date: "2023-10-15",
+  end_date: "2024-10-14",
+  organization_id: 3
+})
+
+proj7 = Project.create({
+  name: "Coral Reef Restoration Project",
+  description: "Restoring damaged coral reefs and implementing measures to mitigate the impacts of climate change.",
+  location: "Great Barrier Reef, Australia",
+  start_date: "2023-08-01",
+  end_date: "2024-07-31",
   organization_id: 4
+})
+
+proj8 = Project.create({
+  name: "Anti-Poaching Task Force",
+  description: "Strengthening anti-poaching efforts to combat wildlife trafficking and protect endangered species.",
+  location: "Serengeti National Park, Tanzania",
+  start_date: "2023-09-15",
+  end_date: "2024-03-15",
+  organization_id: 4
+})
+
+proj9 = Project.create({
+  name: "Elephant Conservation Project",
+  description: "Implementing strategies to address human-elephant conflict and ensure the long-term survival of African elephants.",
+  location: "Amboseli National Park, Kenya",
+  start_date: "2023-07-01",
+  end_date: "2023-12-31",
+  organization_id: 5
+})
+
+proj10 = Project.create({
+  name: "Sustainable Community Livelihood Program",
+  description: "Supporting local communities in developing sustainable livelihoods that promote conservation and reduce dependence on natural resources.",
+  location: "Okavango Delta, Botswana",
+  start_date: "2023-08-15",
+  end_date: "2024-08-14",
+  organization_id: 5
+})
+
+proj11 = Project.create({
+  name: "Crown-of-Thorns Starfish Control Program",
+  description: "Controlling the population of crown-of-thorns starfish, a major threat to the health of the Great Barrier Reef.",
+  location: "Cairns, Queensland, Australia",
+  start_date: "2023-09-01",
+  end_date: "2024-08-31",
+  organization_id: 6
+})
+
+proj12 = Project.create({
+  name: "Climate Change Adaptation Research",
+  description: "Studying the impact of climate change on the Great Barrier Reef and developing strategies for its adaptation and resilience.",
+  location: "Townsville, Queensland, Australia",
+  start_date: "2023-10-15",
+  end_date: "2024-10-14",
+  organization_id: 6
+})
+
+proj13 = Project.create({
+  name: "Rhino Conservation Monitoring Program",
+  description: "Monitoring rhino populations and implementing conservation measures to protect them from poaching and habitat loss.",
+  location: "Hluhluwe-Imfolozi Park, South Africa",
+  start_date: "2023-08-01",
+  end_date: "2024-07-31",
+  organization_id: 7
+})
+
+proj14 = Project.create({
+  name: "Rhino Habitat Restoration Initiative",
+  description: "Restoring degraded rhino habitats and ensuring the availability of food and water for the rhino populations.",
+  location: "Kaziranga National Park, India",
+  start_date: "2023-09-15",
+  end_date: "2024-03-15",
+  organization_id: 7
+})
+
+proj15 = Project.create({
+  name: "Sea Turtle Nesting Beach Protection",
+  description: "Protecting and monitoring sea turtle nesting beaches to ensure successful hatchling emergence.",
+  location: "Tortuguero, Costa Rica",
+  start_date: "2023-07-01",
+  end_date: "2023-12-31",
+  organization_id: 8
+})
+
+proj16 = Project.create({
+  name: "Sea Turtle Rehabilitation Center",
+  description: "Rehabilitating injured sea turtles and releasing them back into their natural habitats for their long-term survival.",
+  location: "Marathon, Florida, USA",
+  start_date: "2023-08-15",
+  end_date: "2024-08-14",
+  organization_id: 8
 })
 
