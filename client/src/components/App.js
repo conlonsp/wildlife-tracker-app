@@ -8,6 +8,7 @@ import '../App.css';
 import Dashboard from '../pages/Dashboard';
 import LoginSignup from '../pages/LoginSignup';
 import Header from './Header';
+import About from '../pages/About'
 
 function App() {
   const { user, setUser } = useContext(UserContext)
@@ -35,6 +36,9 @@ function App() {
         }/>
         <Route path='/loginsignup' element={
           <LoginSignup/>
+        }/>
+        <Route path='/about' element={
+          <About/>
         }/>
       </Routes>
     </div>
