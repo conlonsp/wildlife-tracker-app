@@ -4,7 +4,7 @@ user1 = User.create({
   username: "noot",
   password: "woofwoof",
   password_confirmation: "woofwoof",
-  bio: "I'm a dog and I like balls and swimming.",
+  bio: "Passionate nature enthusiast dedicated to protecting wildlife and conserving ecosystems. Join me in the fight for a greener future!",
   avatar_url: "https://cache.lovethispic.com/uploaded_images/blogs/10-Beautiful-Nature-Scenes-And-Landscapes-48771-6.jpeg"
 })
 
@@ -12,7 +12,7 @@ user2 = User.create({
   username: "sam",
   password: "rawknroll",
   password_confirmation: "rawknroll",
-  bio: "I'm a human and I want to rawk.",
+  bio: "Wildlife advocate on a mission to preserve biodiversity. Exploring nature's wonders and inspiring conservation efforts worldwide.",
   avatar_url: "https://cache.lovethispic.com/uploaded_images/blogs/10-Beautiful-Nature-Scenes-And-Landscapes-48771-9.jpeg"
 })
 
