@@ -20,6 +20,15 @@ function OrganizationList() {
   return (
     <div>
       <h1>Organization List</h1>
+      {organizations.map(org => {
+        return (
+          <li key={org.id}>
+            <h3>{org.name}</h3>
+            <h4>{org.mission}</h4>
+            <h5>{org.location}</h5>
+          </li>
+        )
+      })}
     </div>
   )
 }
