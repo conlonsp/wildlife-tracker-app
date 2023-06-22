@@ -5,7 +5,20 @@ function Dashboard() {
   const { user, setUser } = useContext(UserContext)
 
   return (
-    <h1>Dashboard</h1>
+    <div>
+      {user ?
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome, {user.username}!</p>
+        </div>
+      :
+        <div>
+          <h1>Dashboard</h1>
+          <p>Please log in to access app features!</p>
+        </div>
+      }
+      
+    </div>
   )
 }
 
