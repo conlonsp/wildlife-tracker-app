@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import OrganizationList from '../components/OrganizationList'
 import { UserContext } from '../Context'
 
 function Dashboard() {
@@ -10,6 +11,7 @@ function Dashboard() {
         <div>
           <h1>Dashboard</h1>
           <p>Welcome, {user.username}!</p>
+          <OrganizationList />
         </div>
       :
         <div>

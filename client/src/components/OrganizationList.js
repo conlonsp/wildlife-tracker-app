@@ -15,6 +15,8 @@ function OrganizationList() {
     })
   }, [])
 
+  console.log(organizations)
+
   return (
     <div>
       <h1>Organization List</h1>
