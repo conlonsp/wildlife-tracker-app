@@ -17,6 +17,11 @@ function NavBar() {
       >
         About
       </NavLink>
+      <NavLink
+        to='/organizations'
+      >
+        Organizations
+      </NavLink>
     </div>
   )
 }
