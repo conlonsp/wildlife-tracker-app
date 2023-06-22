@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function OrganizationList() {
   const [organizations, setOrganizations] = useState([])
+  const [errors, setErrors] = useState([])
 
   useEffect(() => {
     fetch('/organizations')
