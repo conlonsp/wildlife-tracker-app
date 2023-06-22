@@ -9,6 +9,7 @@ import Dashboard from '../pages/Dashboard';
 import LoginSignup from '../pages/LoginSignup';
 import Header from './Header';
 import About from '../pages/About'
+import Organizations from '../components/Organizations'
 
 function App() {
   const { user, setUser } = useContext(UserContext)
@@ -35,10 +36,13 @@ function App() {
           <Dashboard />
         }/>
         <Route path='/loginsignup' element={
-          <LoginSignup/>
+          <LoginSignup />
         }/>
         <Route path='/about' element={
-          <About/>
+          <About />
+        }/>
+        <Route path='/organizations' element={
+          <Organizations />
         }/>
       </Routes>
     </div>

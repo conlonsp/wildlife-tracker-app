@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function OrganizationList() {
+function Organizations() {
   const [organizations, setOrganizations] = useState([])
   const [errors, setErrors] = useState([])
 
@@ -33,4 +33,4 @@ function OrganizationList() {
   )
 }
 
-export default OrganizationList
+export default Organizations
