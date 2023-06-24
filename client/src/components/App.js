@@ -9,7 +9,7 @@ import Dashboard from '../pages/Dashboard';
 import LoginSignup from '../pages/LoginSignup';
 import Header from './Header';
 import About from '../pages/About'
-import Organizations from '../components/Organizations'
+import Organizations from '../pages/Organizations'
 
 function App() {
   const { user, setUser } = useContext(UserContext)
