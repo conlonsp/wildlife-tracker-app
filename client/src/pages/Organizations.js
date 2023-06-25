@@ -1,22 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-function Organizations() {
-  const [organizations, setOrganizations] = useState([])
-  const [errors, setErrors] = useState([])
-
-  useEffect(() => {
-    fetch('/organizations')
-    .then(r => {
-      if(r.ok) {
-        r.json().then(orgs => setOrganizations(orgs))
-      } else {
-        r.json().then(err => setErrors(err.errors))
-      }
-    })
-  }, [])
-
-  
+function Organizations({ organizations }) {
 
   const renderOrgs = Object.keys(organizations).map(orgId => (
     <li key={orgId}>
@@ -28,6 +13,13 @@ function Organizations() {
     <div>
       <h1>Organization List</h1>
       <ul>{renderOrgs}</ul>
+    </div>
+  )
+}
+
+export default Organizations
+
+
       {/* {organizations.map(org => {
         return (
           <li key={org.id}>
@@ -37,8 +29,3 @@ function Organizations() {
           </li>
         )
       })} */}
-    </div>
-  )
-}
-
-export default Organizations

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../Context';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useMatch } from 'react-router-dom';
 
 import logo from '../logo.svg';
 import '../App.css';
@@ -10,9 +10,15 @@ import LoginSignup from '../pages/LoginSignup';
 import Header from './Header';
 import About from '../pages/About'
 import Organizations from '../pages/Organizations'
+import Organization from '../pages/Organization';
 
 function App() {
   const { user, setUser } = useContext(UserContext)
+
+  const [organizations, setOrganizations] = useState([])
+  const [errors, setErrors] = useState([])
+
+  // const match = useMatch('/organizations/:organization_id')
 
   useEffect(() => {
     fetch('/me').then(r => {
@@ -24,9 +30,21 @@ function App() {
     })
   }, [])
 
+  useEffect(() => {
+    fetch('/organizations')
+    .then(r => {
+      if(r.ok) {
+        r.json().then(orgs => setOrganizations(orgs))
+      } else {
+        r.json().then(err => setErrors(err.errors))
+      }
+    })
+  }, [])
+
   // if(!user) return (
   //   <LoginSignup />
   // )
+
 
   return (
     <div className="App">
@@ -42,8 +60,14 @@ function App() {
           <About />
         }/>
         <Route path='/organizations' element={
-          <Organizations />
+          <Organizations organizations={organizations} />
         }/>
+        {user ? <Route path='/organizations/:id' element={
+          <Organization organizations={organizations} />
+        }/>
+        :
+          null
+        }
       </Routes>
     </div>
   );
