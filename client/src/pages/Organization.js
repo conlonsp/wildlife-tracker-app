@@ -1,17 +1,26 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function Organization({ organizations }) {
-  
-  // const org = organizations[id]
-  // console.log(org)
 
   const params = useParams()
-  console.log(organizations[params.id].name)
-
+  
+  const org = organizations[params.id]
+  
+  console.log(organizations[params.id])
 
   return (
-    <h1>{organizations[params.id].name}</h1>
+    <div>
+      <h1>{org.name}</h1>
+      <h4>Projects</h4>
+      {org.projects.map(proj => {
+        return (
+          <li key={proj.id}>
+            <Link to={`/projects/${proj.id}`}>{proj.name}</Link>
+          </li>
+        )
+      })}
+    </div>
   )
 }
 
