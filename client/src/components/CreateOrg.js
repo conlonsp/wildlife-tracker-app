@@ -6,6 +6,7 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
     location: '',
     mission: '',
   })
+  const [errors, setErrors] = useState([])
 
   function handleChange(e) {
     setOrganization({
