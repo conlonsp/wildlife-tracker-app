@@ -2,6 +2,9 @@ class OrganizationsController < ApplicationController
   rescue_from ActiveRecord::RecordInvalid, with: :org_unprocessable
   rescue_from ActiveRecord::RecordNotFound, with: :org_not_found
 
+  before_action :authorize
+  skip_before_action :authorize, only: [:index]
+
   def index
     render json: Organization.all, status: :ok
   end
@@ -43,6 +46,6 @@ class OrganizationsController < ApplicationController
   end
 
   def authorize
-    render json: { errors: ["Please log in to enable features"]}, status: :unauthorized unless session.includes? :user_id
+    return render json: { errors: ["Please log in to enable features"]}, status: :unauthorized unless session.include? :user_id
   end
 end

@@ -17,6 +17,7 @@ function Project() {
   return (
     <div>
       <h1>This is the Project Page</h1>
+      <p>{project.name}</p>
     </div>
   )
 }
