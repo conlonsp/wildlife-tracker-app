@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function Project() {
+  const [project, setProject] = useState({})
 
   const params = useParams()
 
