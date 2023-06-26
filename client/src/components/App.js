@@ -8,10 +8,11 @@ import '../App.css';
 import Dashboard from '../pages/Dashboard';
 import LoginSignup from '../pages/LoginSignup';
 import Header from './Header';
-import About from '../pages/About'
-import Organizations from '../pages/Organizations'
+import About from '../pages/About';
+import Organizations from '../pages/Organizations';
 import Organization from '../pages/Organization';
-import Project from '../pages/Project'
+import Project from '../pages/Project';
+import Footer from './Footer';
 
 function App() {
   const { user, setUser } = useContext(UserContext)
@@ -70,6 +71,7 @@ function App() {
           <Project />
         }/>
       </Routes>
+      <Footer />
     </div>
   );
 }
