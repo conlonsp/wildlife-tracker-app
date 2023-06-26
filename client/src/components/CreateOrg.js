@@ -49,21 +49,21 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
           type='text'
           name='name'
           placeholder="Organization Name"
-          value={organization.name}
+          value={newOrg.name}
           onChange={handleChange}
         />
         <input
           type='text'
           name='location'
           placeholder="Based out of..."
-          value={organization.location}
+          value={newOrg.location}
           onChange={handleChange}
         />
         <textarea
           type='text'
           name='mission'
           placeholder='Our mission is...'
-          value={organization.mission}
+          value={newOrg.mission}
           onChange={handleChange}
         />
         <button type='submit'>Submit</button>

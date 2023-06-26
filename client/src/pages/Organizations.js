@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../Context";
 
 import CreateOrg from "../components/CreateOrg";
 
 function Organizations({ organizations, setOrganizations }) {
   const [rendCreate, setRendCreate] = useState(false)
+
+  const { user } = useContext(UserContext)
 
   const renderOrgs = organizations.map(org => (
     <li key={org.id}>
@@ -18,7 +21,7 @@ function Organizations({ organizations, setOrganizations }) {
         <div>
           <h1>Organization List</h1>
           <ul>{renderOrgs}</ul>
-          <button onClick={() => setRendCreate(true)}>Create</button>
+          {user ? <button onClick={() => setRendCreate(true)}>Create</button> : null}
         </div>
       :
         <CreateOrg
