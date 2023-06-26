@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CreateOrg from "../components/CreateOrg";
 
 function Organizations({ organizations }) {
+  const [rendCreate, setRendCreate] = useState(false)
 
   const renderOrgs = organizations.map(org => (
     <li key={org.id}>
@@ -13,9 +14,15 @@ function Organizations({ organizations }) {
 
   return (
     <div>
-      <h1>Organization List</h1>
-      <ul>{renderOrgs}</ul>
-      <CreateOrg />
+      {!rendCreate ?
+        <div>
+          <h1>Organization List</h1>
+          <ul>{renderOrgs}</ul>
+          <button onClick={() => setRendCreate(true)}>Create</button>
+        </div>
+      :
+        <CreateOrg setRendCreate={setRendCreate} />
+      }
     </div>
   )
 }
