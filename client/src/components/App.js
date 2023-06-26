@@ -12,6 +12,7 @@ import About from '../pages/About'
 import Organizations from '../pages/Organizations'
 import Organization from '../pages/Organization';
 
+
 function App() {
   const { user, setUser } = useContext(UserContext)
 
@@ -62,12 +63,12 @@ function App() {
         <Route path='/organizations' element={
           <Organizations organizations={organizations} />
         }/>
-        {user ? <Route path='/organizations/:id' element={
-          <Organization organizations={organizations} />
+        <Route path='/organizations/:id' element={
+          <Organization />
         }/>
-        :
-          null
-        }
+        <Route path='/projects/:id' element={
+          <Project />
+        }/>
       </Routes>
     </div>
   );

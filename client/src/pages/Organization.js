@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
-function Organization({ organizations }) {
+function Organization() {
 
   const params = useParams()
 
