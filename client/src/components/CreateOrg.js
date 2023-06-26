@@ -44,7 +44,7 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
   return (
     <div>
       <h1>Create an Organization here!</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type='text'
           name='name'
