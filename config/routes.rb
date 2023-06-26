@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :donations
   resources :user_organizations
-  resources :projects
+  resources :projects, only: [:index, :show, :create]
   
   
   # Routing logic: fallback requests for React Router.
