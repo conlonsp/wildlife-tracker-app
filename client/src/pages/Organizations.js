@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import CreateOrg from "../components/CreateOrg";
+
 function Organizations({ organizations }) {
 
   const renderOrgs = organizations.map(org => (
@@ -13,6 +15,7 @@ function Organizations({ organizations }) {
     <div>
       <h1>Organization List</h1>
       <ul>{renderOrgs}</ul>
+      <CreateOrg />
     </div>
   )
 }

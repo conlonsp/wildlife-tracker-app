@@ -4,7 +4,7 @@ function CreateOrg() {
 
   return (
     <div>
-
+      <h1>Create an Organization here!</h1>
     </div>
   )
 }
