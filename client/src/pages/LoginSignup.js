@@ -8,9 +8,9 @@ function LoginSignup() {
   return (
     <div>
       {toLogin ?
-        <LoginForm setToLogin={setToLogin} />
-      :
         <SignupForm setToLogin={setToLogin} />
+      :
+        <LoginForm setToLogin={setToLogin} />
       }
     </div>
   )

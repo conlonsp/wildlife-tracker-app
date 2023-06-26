@@ -100,7 +100,13 @@ function SignupForm({ setToLogin }) {
           <p key={err} style={{color: 'red'}}>{err}</p>
         )
       })}
-      <button onClick={()=>setToLogin(true)}>Login</button>
+      <span>
+        <p>
+          Already have an account?
+          &nbsp;
+          <button onClick={()=>setToLogin(false)}>Login</button>
+        </p>
+      </span>
     </div>
   )
 }
