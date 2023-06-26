@@ -62,7 +62,10 @@ function App() {
           <About />
         }/>
         <Route path='/organizations' element={
-          <Organizations organizations={organizations} />
+          <Organizations
+            organizations={organizations}
+            setOrganizations={setOrganizations}
+          />
         }/>
         <Route path='/organizations/:id' element={
           <Organization />

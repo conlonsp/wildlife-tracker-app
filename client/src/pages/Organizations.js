@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import CreateOrg from "../components/CreateOrg";
 
-function Organizations({ organizations }) {
+function Organizations({ organizations, setOrganizations }) {
   const [rendCreate, setRendCreate] = useState(false)
 
   const renderOrgs = organizations.map(org => (
@@ -21,7 +21,11 @@ function Organizations({ organizations }) {
           <button onClick={() => setRendCreate(true)}>Create</button>
         </div>
       :
-        <CreateOrg setRendCreate={setRendCreate} />
+        <CreateOrg
+          setRendCreate={setRendCreate}
+          organizations={organizations}
+          setOrganizations={setOrganizations}
+        />
       }
     </div>
   )

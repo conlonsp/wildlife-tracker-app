@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function CreateOrg({ setRendCreate }) {
-  const [organization, setOrganization] = useState({
+function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
+  const [newOrg, setNewOrg] = useState({
     name: '',
     location: '',
     mission: '',
@@ -9,30 +9,31 @@ function CreateOrg({ setRendCreate }) {
 
   function handleChange(e) {
     setOrganization({
-      ...organization,
+      ...newOrg,
       [e.target.name]: e.target.value
     })
-
   }
-  
 
   return (
     <div>
       <h1>Create an Organization here!</h1>
       <form>
         <input
+          type='text'
           name='name'
           placeholder="Organization Name"
           value={organization.name}
           onChange={handleChange}
         />
         <input
+          type='text'
           name='location'
           placeholder="Based out of..."
           value={organization.location}
           onChange={handleChange}
         />
         <textarea
+          type='text'
           name='mission'
           placeholder='Our mission is...'
           value={organization.mission}
