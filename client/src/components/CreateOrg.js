@@ -23,14 +23,20 @@ function CreateOrg({ setRendCreate }) {
         <input
           name='name'
           placeholder="Organization Name"
+          value={organization.name}
+          onChange={handleChange}
         />
         <input
           name='location'
           placeholder="Based out of..."
+          value={organization.location}
+          onChange={handleChange}
         />
         <textarea
           name='mission'
           placeholder='Our mission is...'
+          value={organization.mission}
+          onChange={handleChange}
         />
         <button>Submit</button>
       </form>
