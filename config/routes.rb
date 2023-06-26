@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :organizations
+  resources :organizations do 
+    resources :projects, only: [:index, :show, :create]
+  end
 
   resources :donations
   resources :user_organizations
