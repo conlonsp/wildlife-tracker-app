@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../Context';
 import { Route, Routes } from 'react-router-dom';
 
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 import '../App.css';
 
 import Dashboard from '../pages/Dashboard';
