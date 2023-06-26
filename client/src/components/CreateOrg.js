@@ -9,9 +9,35 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
   const [errors, setErrors] = useState([])
 
   function handleChange(e) {
-    setOrganization({
+    setNewOrg({
       ...newOrg,
       [e.target.name]: e.target.value
+    })
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('/organizations', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: newOrg.name,
+        location: newOrg.location,
+        mission: newOrg.mission
+      })
+    }).then(r => {
+      if(r.ok) {
+        r.json().then(org => {
+          setOrganizations([...organizations, newOrg])
+          setNewOrg({
+            name: '',
+            location: '',
+            mission: '',
+          })
+        })
+      } else {
+        r.json().then(err => setErrors(err.errors))
+      }
     })
   }
 
