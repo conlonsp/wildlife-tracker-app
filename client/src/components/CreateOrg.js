@@ -66,7 +66,7 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
           value={organization.mission}
           onChange={handleChange}
         />
-        <button>Submit</button>
+        <button type='submit'>Submit</button>
       </form>
       <button onClick={() => setRendCreate(false)}>Close</button>
     </div>
