@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 function Organization({ organizations }) {
 
   const params = useParams()
-  
-  const org = organizations[params.id]
-  
-  console.log(organizations[params.id])
 
+  const [organization, setOrganization] = useState({})
+
+  useEffect(() => {
+    fetch(`/organizations/${params.id}`)
+    .then(r => r.json())
+    .then(org => setOrganization(org))
+  }, [])
+  
   return (
     <div>
-      <h1>{org.name}</h1>
+      <h1>{organization.name}</h1>
       <h4>Projects</h4>
-      {org.projects.map(proj => {
+      {organization.projects.map(proj => {
         return (
           <li key={proj.id}>
             <Link to={`/projects/${proj.id}`}>{proj.name}</Link>

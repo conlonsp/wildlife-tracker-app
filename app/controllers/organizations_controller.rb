@@ -41,4 +41,8 @@ class OrganizationsController < ApplicationController
   def org_not_found
     render json: { errors: ["Organization not found"] }, status: :not_found
   end
+
+  def authorize
+    render json: { errors: ["Please log in to enable features"]}, status: :unauthorized unless session.includes? :user_id
+  end
 end
