@@ -6,6 +6,14 @@ function Project() {
 
   const params = useParams()
 
+  console.log(params)
+
+  useEffect(() => {
+    fetch(`/projects/${params.id}`)
+    .then(r => r.json())
+    .then(proj => setProject(proj))
+  }, [])
+
   return (
     <div>
       <h1>This is the Project Page</h1>
