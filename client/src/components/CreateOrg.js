@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 function CreateOrg({ setRendCreate }) {
+  const [organization, setOrganization] = useState({
+    name: '',
+    location: '',
+    mission: '',
+  })
+  
 
   return (
     <div>
