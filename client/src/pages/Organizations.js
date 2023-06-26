@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Organizations({ organizations }) {
 
   const renderOrgs = organizations.map(org => (
-    <li key={org.di}>
+    <li key={org.id}>
       <Link to={`/organizations/${org.id}`}>{org.name}</Link>
     </li>
   ))
