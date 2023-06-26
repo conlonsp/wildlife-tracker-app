@@ -6,6 +6,14 @@ function CreateOrg({ setRendCreate }) {
     location: '',
     mission: '',
   })
+
+  function handleChange(e) {
+    setOrganization({
+      ...organization,
+      [e.target.name]: e.target.value
+    })
+
+  }
   
 
   return (
