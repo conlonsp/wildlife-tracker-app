@@ -19,6 +19,7 @@ function Organization({ organization, setOrganization }) {
       if(r.ok) {
         r.json().then(org => {
           setOrganization(org)
+          setOrgProjects(org.projects)
           setIsLoading(true)
         })
       } else {
@@ -27,14 +28,14 @@ function Organization({ organization, setOrganization }) {
     })
   }, [])
 
-  useEffect(() => {
-    fetch(`/organizations/${params.id}/projects`)
-    .then(r => r.json())
-    .then(projects => {
-      setOrgProjects(projects)
-      setIsLoading(true)
-    })
-  }, [])
+  // useEffect(() => {
+  //   fetch(`/organizations/${params.id}/projects`)
+  //   .then(r => r.json())
+  //   .then(projects => {
+  //     setOrgProjects(projects)
+  //     setIsLoading(true)
+  //   })
+  // }, [])
 
   if (!isLoading) return <h1>Loading...</h1>
   
