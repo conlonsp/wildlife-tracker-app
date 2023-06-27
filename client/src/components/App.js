@@ -55,6 +55,11 @@ function App() {
     setOrganizations(updates)
   }
 
+  function handleDelete(id) {
+    const deletedOrgArr = organizations.filter(org => org.id !== id)
+    setOrganizations(deletedOrgArr)
+  }
+
   // if(!user) return (
   //   <LoginSignup />
   // )

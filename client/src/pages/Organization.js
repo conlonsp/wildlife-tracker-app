@@ -11,7 +11,7 @@ function Organization({ organization, setOrganization }) {
 
   const [orgProjects, setOrgProjects] = useState([])
   const [errors, setErrors] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     fetch(`/organizations/${params.id}`)
@@ -20,7 +20,7 @@ function Organization({ organization, setOrganization }) {
         r.json().then(org => {
           setOrganization(org)
           setOrgProjects(org.projects)
-          setIsLoading(true)
+          // setIsLoading(true)
         })
       } else {
         r.json().then(err => setErrors(err.errors))
@@ -37,7 +37,7 @@ function Organization({ organization, setOrganization }) {
   //   })
   // }, [])
 
-  if (!isLoading) return <h1>Loading...</h1>
+  // if (!isLoading) return <h1>Loading...</h1>
   
   return (
     <div>
