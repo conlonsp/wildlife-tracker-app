@@ -83,7 +83,7 @@ function App() {
           <CreateOrg />
         }/>
         <Route path='/organizations/:id/update' element={
-          <UpdateOrg />
+          <UpdateOrg organization={organization} />
         }/>
       </Routes>
       <Footer />

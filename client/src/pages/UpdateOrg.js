@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-function UpdateOrg() {
+function UpdateOrg({ organization }) {
 
   const params = useParams()
   const navigate = useNavigate()
