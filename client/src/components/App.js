@@ -23,8 +23,6 @@ function App() {
   const [organization, setOrganization] = useState({})
   const [errors, setErrors] = useState([])
 
-  // const match = useMatch('/organizations/:organization_id')
-
   useEffect(() => {
     fetch('/me').then(r => {
       if(r.ok) {
@@ -46,10 +44,20 @@ function App() {
     })
   }, [])
 
+  function handleUpdate(updatedOrg) {
+    let updates = organizations.map(org => {
+      if(org.id === updatedOrg.id) {
+        return updatedOrg
+      } else {
+        return org
+      }
+    })
+    setOrganizations(updates)
+  }
+
   // if(!user) return (
   //   <LoginSignup />
   // )
-
 
   return (
     <div className="App">
@@ -83,7 +91,10 @@ function App() {
           <CreateOrg />
         }/>
         <Route path='/organizations/:id/update' element={
-          <UpdateOrg organization={organization} />
+          <UpdateOrg
+            organization={organization}
+            onUpdate={handleUpdate}
+          />
         }/>
       </Routes>
       <Footer />
