@@ -20,6 +20,7 @@ function App() {
   const { user, setUser } = useContext(UserContext)
 
   const [organizations, setOrganizations] = useState([])
+  const [organization, setOrganization] = useState({})
   const [errors, setErrors] = useState([])
 
   // const match = useMatch('/organizations/:organization_id')
@@ -70,7 +71,10 @@ function App() {
           />
         }/>
         <Route path='/organizations/:id' element={
-          <Organization />
+          <Organization
+            organization={organization}
+            setOrganization={setOrganization}
+          />
         }/>
         <Route path='/projects/:id' element={
           <Project />
