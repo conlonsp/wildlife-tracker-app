@@ -13,6 +13,8 @@ import Organizations from '../pages/Organizations';
 import Organization from '../pages/Organization';
 import Project from '../pages/Project';
 import Footer from './Footer';
+import CreateOrg from "../pages/CreateOrg";
+import UpdateOrg from "../pages/UpdateOrg";
 
 function App() {
   const { user, setUser } = useContext(UserContext)
@@ -72,6 +74,12 @@ function App() {
         }/>
         <Route path='/projects/:id' element={
           <Project />
+        }/>
+        <Route path='/create-organization' element={
+          <CreateOrg />
+        }/>
+        <Route path='/organizations/:id/update' element={
+          <UpdateOrg />
         }/>
       </Routes>
       <Footer />

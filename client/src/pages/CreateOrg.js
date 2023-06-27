@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
+
+  const navigate = useNavigate()
+
   const [newOrg, setNewOrg] = useState({
     name: '',
     location: '',
@@ -68,7 +72,7 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
         />
         <button type='submit'>Submit</button>
       </form>
-      <button onClick={() => setRendCreate(false)}>Close</button>
+      <button onClick={() => navigate('/organizations')}>Close</button>
     </div>
   )
 }

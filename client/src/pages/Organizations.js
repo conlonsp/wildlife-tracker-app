@@ -1,13 +1,12 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../Context";
 
-import CreateOrg from "../components/CreateOrg";
-
 function Organizations({ organizations, setOrganizations }) {
-  const [rendCreate, setRendCreate] = useState(false)
 
   const { user } = useContext(UserContext)
+
+  const navigate = useNavigate()
 
   const renderOrgs = organizations.map(org => (
     <li key={org.id}>
@@ -17,19 +16,14 @@ function Organizations({ organizations, setOrganizations }) {
 
   return (
     <div>
-      {!rendCreate ?
-        <div>
-          <h1>Organization List</h1>
-          <ul>{renderOrgs}</ul>
-          {user ? <button onClick={() => setRendCreate(true)}>Create</button> : null}
-        </div>
+      <h1>Organization List</h1>
+      <ul>{renderOrgs}</ul>
+      {user ?
+        <button onClick={() => navigate('/create-organization')}>Create</button>
       :
-        <CreateOrg
-          setRendCreate={setRendCreate}
-          organizations={organizations}
-          setOrganizations={setOrganizations}
-        />
+        null
       }
+      
     </div>
   )
 }
