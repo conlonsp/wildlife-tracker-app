@@ -1,10 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../Context'
 
 function Organization() {
 
   const { user } = useContext(UserContext)
+
+  const navigate = useNavigate()
 
   const params = useParams()
 
@@ -42,6 +44,7 @@ function Organization() {
               </li>
             )
           })}
+          <button onClick={() => navigate(`/organizations/${params.id}/update`)}>Update</button>
         </div>
       :
         <p>{errors}</p>
