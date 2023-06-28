@@ -32,7 +32,7 @@ function Organizations({ organizations, setOrganizations }) {
       :
         null
       }
-      
+
     </div>
   )
 }

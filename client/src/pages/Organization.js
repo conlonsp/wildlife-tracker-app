@@ -27,11 +27,11 @@ function Organization({ organization, setOrganization, onDelete }) {
   }, [])
 
   function deleteOrg() {
-    fetch(`/organizations/${params.id}`, {
+    fetch(`/organizations/${organization.id}`, {
       method: 'DELETE'
     }).then(r => {
       if(r.ok) {
-        onDelete(params.id)
+        onDelete(organization.id)
         navigate('/organizations')
       } else {
         r.json().then(err => {

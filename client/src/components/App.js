@@ -56,8 +56,7 @@ function App() {
   }
 
   function handleDelete(id) {
-    const deletedOrgArr = organizations.filter(org => org.id !== id)
-    setOrganizations(deletedOrgArr)
+    setOrganizations(prevOrgs => prevOrgs.filter(org => org.id !== id))
   }
 
   // if(!user) return (
