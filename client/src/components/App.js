@@ -106,7 +106,7 @@ function App() {
           }/>
         </Route>
         <Route path='/projects/:id' element={
-          <Project />
+          <Project orgId={orgId} />
         }/>
       </Routes>
       <Footer />
