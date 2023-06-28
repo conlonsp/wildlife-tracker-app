@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../Context'
 
-function Organization({ organization, setOrganization, onDelete }) {
+function Organization({ organization, setOrganization, onDelete, grabId }) {
 
   const { user } = useContext(UserContext)
 
@@ -19,6 +19,7 @@ function Organization({ organization, setOrganization, onDelete }) {
         r.json().then(org => {
           setOrganization(org)
           setOrgProjects(org.projects)
+          grabId(org.id)
         })
       } else {
         r.json().then(err => setErrors(err.errors))

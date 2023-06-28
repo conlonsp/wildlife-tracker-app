@@ -22,6 +22,7 @@ function App() {
   const [organizations, setOrganizations] = useState([])
   const [organization, setOrganization] = useState({})
   const [errors, setErrors] = useState([])
+  const [orgId, setOrgId] = useState(null)
 
   useEffect(() => {
     fetch('/me').then(r => {
@@ -59,9 +60,9 @@ function App() {
     setOrganizations(prevOrgs => prevOrgs.filter(org => org.id !== id))
   }
 
-  // if(!user) return (
-  //   <LoginSignup />
-  // )
+  function grabId(id) {
+    setOrgId(id)
+  }
 
   return (
     <div className="App">
@@ -88,6 +89,7 @@ function App() {
               organization={organization}
               setOrganization={setOrganization}
               onDelete={handleDelete}
+              grabId={grabId}
             />
           }/>
           <Route path='new' element={
