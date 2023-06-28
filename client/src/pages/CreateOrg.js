@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
+function CreateOrg({ organizations, setOrganizations }) {
 
   const navigate = useNavigate()
 
@@ -19,6 +19,8 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
     })
   }
 
+  console.log(organizations)
+
   function handleSubmit(e) {
     e.preventDefault()
     fetch('/organizations', {
@@ -32,7 +34,7 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
     }).then(r => {
       if(r.ok) {
         r.json().then(org => {
-          setOrganizations([...organizations, newOrg])
+          setOrganizations([...organizations, org])
           setNewOrg({
             name: '',
             location: '',
@@ -72,6 +74,11 @@ function CreateOrg({ setRendCreate, organizations, setOrganizations }) {
         />
         <button type='submit'>Submit</button>
       </form>
+      {errors.map(err => {
+        return (
+          <p key={err} style={{color: 'red'}}>{err}</p>
+        )
+      })}
       <button onClick={() => navigate('/organizations')}>Close</button>
     </div>
   )

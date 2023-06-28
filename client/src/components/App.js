@@ -77,29 +77,35 @@ function App() {
         <Route path='/about' element={
           <About />
         }/>
-        <Route path='/organizations' element={
-          <Organizations
-            organizations={organizations}
-            setOrganizations={setOrganizations}
-          />
-        }/>
-        <Route path='/organizations/:id' element={
-          <Organization
-            organization={organization}
-            setOrganization={setOrganization}
-          />
-        }/>
+        <Route path='/organizations'>
+          <Route index element={
+            <Organizations
+              organizations={organizations}
+              setOrganizations={setOrganizations}
+            />
+          }/>
+          <Route path=':id' element={
+            <Organization
+              organization={organization}
+              setOrganization={setOrganization}
+              onDelete={handleDelete}
+            />
+          }/>
+          <Route path='new' element={
+            <CreateOrg
+              organizations={organizations}
+              setOrganizations={setOrganizations}
+            />
+          }/>
+          <Route path=':id/update' element={
+            <UpdateOrg
+              organization={organization}
+              onUpdate={handleUpdate}
+            />
+          }/>
+        </Route>
         <Route path='/projects/:id' element={
           <Project />
-        }/>
-        <Route path='/create-organization' element={
-          <CreateOrg />
-        }/>
-        <Route path='/organizations/:id/update' element={
-          <UpdateOrg
-            organization={organization}
-            onUpdate={handleUpdate}
-          />
         }/>
       </Routes>
       <Footer />
@@ -124,3 +130,29 @@ export default App;
           Learn React
         </a>
       </header> */}
+
+      // <Route path='/create-organization' element={
+      //   <CreateOrg
+      //     organizations={organizations}
+      //     setOrganizations={setOrganizations}
+      //   />
+      // }/>
+      // <Route path='/organizations/:id/update' element={
+      //   <UpdateOrg
+      //     organization={organization}
+      //     onUpdate={handleUpdate}
+      //   />
+      // }/>
+      // <Route path='/organizations' element={
+      //   <Organizations
+      //     organizations={organizations}
+      //     setOrganizations={setOrganizations}
+      //   />
+      // }/>
+      // <Route path='/organizations/:id' element={
+      //   <Organization
+      //     organization={organization}
+      //     setOrganization={setOrganization}
+      //     onDelete={handleDelete}
+      //   />
+      // }/>

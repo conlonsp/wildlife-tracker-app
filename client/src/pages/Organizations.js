@@ -8,18 +8,27 @@ function Organizations({ organizations, setOrganizations }) {
 
   const navigate = useNavigate()
 
-  const renderOrgs = organizations.map(org => (
-    <li key={org.id}>
-      <Link to={`/organizations/${org.id}`}>{org.name}</Link>
-    </li>
-  ))
+  // const renderOrgs = organizations.map(org => (
+  //   <li key={org.id}>
+  //     <Link to={`/organizations/${org.id}`}>{org.name}</Link>
+  //   </li>
+  // ))
+  console.log(organizations)
 
   return (
     <div>
       <h1>Organization List</h1>
-      <ul>{renderOrgs}</ul>
+      <ul>
+        {organizations.map(org => {
+          return (
+            <li key={org.id}>
+              <Link to={`/organizations/${org.id}`}>{org.name}</Link>
+            </li>
+          )
+        })}
+      </ul>
       {user ?
-        <button onClick={() => navigate('/create-organization')}>Create</button>
+        <button onClick={() => navigate('/organizations/new')}>Create</button>
       :
         null
       }

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../Context'
 
-function Organization({ organization, setOrganization }) {
+function Organization({ organization, setOrganization, onDelete }) {
 
   const { user } = useContext(UserContext)
 
@@ -11,7 +11,6 @@ function Organization({ organization, setOrganization }) {
 
   const [orgProjects, setOrgProjects] = useState([])
   const [errors, setErrors] = useState([])
-  // const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     fetch(`/organizations/${params.id}`)
@@ -20,7 +19,6 @@ function Organization({ organization, setOrganization }) {
         r.json().then(org => {
           setOrganization(org)
           setOrgProjects(org.projects)
-          // setIsLoading(true)
         })
       } else {
         r.json().then(err => setErrors(err.errors))
@@ -28,16 +26,20 @@ function Organization({ organization, setOrganization }) {
     })
   }, [])
 
-  // useEffect(() => {
-  //   fetch(`/organizations/${params.id}/projects`)
-  //   .then(r => r.json())
-  //   .then(projects => {
-  //     setOrgProjects(projects)
-  //     setIsLoading(true)
-  //   })
-  // }, [])
-
-  // if (!isLoading) return <h1>Loading...</h1>
+  function deleteOrg() {
+    fetch(`/organizations/${params.id}`, {
+      method: 'DELETE'
+    }).then(r => {
+      if(r.ok) {
+        onDelete(params.id)
+        navigate('/organizations')
+      } else {
+        r.json().then(err => {
+          setErrors(err.errors)
+        })
+      }
+    })
+  }
   
   return (
     <div>
@@ -55,6 +57,7 @@ function Organization({ organization, setOrganization }) {
             )
           })}
           <button onClick={() => navigate(`/organizations/${params.id}/update`)}>Update</button>
+          <button onClick={deleteOrg}>Delete</button>
         </div>
       :
         <p>{errors}</p>
