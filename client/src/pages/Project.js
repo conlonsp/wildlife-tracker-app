@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
-function Project() {
+function Project({ orgId }) {
   const [project, setProject] = useState({})
 
   const params = useParams()
+  const navigate = useNavigate()
 
   console.log(params)
 
@@ -16,8 +17,12 @@ function Project() {
 
   return (
     <div>
-      <h1>This is the Project Page</h1>
-      <p>{project.name}</p>
+      <h1>{project.name}</h1>
+      <h2>{project.location}</h2>
+      <h4>{project.description}</h4>
+      <h5>Start date: {project.start_date}</h5>
+      <h5>End date: {project.end_date}</h5>
+      <button onClick={() => navigate(`/organizations/${orgId}`)}>Back</button>
     </div>
   )
 }
