@@ -13,6 +13,13 @@ function CreateProj({ orgId }) {
 
   const navigate = useNavigate()
 
+  function handleChange(e) {
+    setNewProj({
+      ...newProj,
+      [e.target.name]: e.target.value
+    })
+  }
+
   return (
     <div>
       <h1>Project Create Form</h1>
