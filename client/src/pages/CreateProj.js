@@ -10,6 +10,7 @@ function CreateProj({ orgId }) {
     endDate: '',
     description: '',
   })
+  const [errors, setErrors] = useState([])
 
   const navigate = useNavigate()
 
