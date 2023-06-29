@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function CreateProj({ orgId }) {
+  
+  const [newProj, setNewProj] = useState({
+    name: '',
+    location: '',
+    startDate: '',
+    endDate: '',
+    description: '',
+  })
 
   const navigate = useNavigate()
 
