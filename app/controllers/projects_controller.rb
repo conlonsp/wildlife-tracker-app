@@ -18,7 +18,12 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    proj = Project.create!(proj_params)
+    if params[:organization_id]
+      org = Organization.find(params[:organization_id])
+      proj = org.projects.create!(proj_params)
+    else
+      proj = Project.create!(proj_params)
+    end
     render json: proj, status: :created
   end
 
