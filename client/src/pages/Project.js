@@ -7,8 +7,6 @@ function Project({ orgId }) {
   const params = useParams()
   const navigate = useNavigate()
 
-  console.log(params)
-
   useEffect(() => {
     fetch(`/projects/${params.id}`)
     .then(r => r.json())
