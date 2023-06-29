@@ -2,14 +2,13 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../Context'
 
-function Organization({ organization, setOrganization, onDelete, grabId }) {
+function Organization({ organization, setOrganization, onDelete, grabId, orgProjects, setOrgProjects}) {
 
   const { user } = useContext(UserContext)
 
   const navigate = useNavigate()
   const params = useParams()
 
-  const [orgProjects, setOrgProjects] = useState([])
   const [errors, setErrors] = useState([])
 
   useEffect(() => {

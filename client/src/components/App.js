@@ -24,6 +24,7 @@ function App() {
   const [organization, setOrganization] = useState({})
   const [errors, setErrors] = useState([])
   const [orgId, setOrgId] = useState(null)
+  const [orgProjects, setOrgProjects] = useState([])
 
   useEffect(() => {
     fetch('/me').then(r => {
@@ -91,6 +92,8 @@ function App() {
               setOrganization={setOrganization}
               onDelete={handleDelete}
               grabId={grabId}
+              orgProjects={orgProjects}
+              setOrgProjects={setOrgProjects}
             />
           }/>
           <Route path='new' element={
@@ -110,7 +113,11 @@ function App() {
           <Project orgId={orgId} />
         }/>
         <Route path='/projects/create' element={
-          <CreateProj orgId={orgId} />
+          <CreateProj
+            orgId={orgId}
+            orgProjects={orgProjects}
+            setOrgProjects={setOrgProjects}
+          />
         }/>
       </Routes>
       <Footer />

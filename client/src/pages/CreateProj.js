@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function CreateProj({ orgId }) {
+function CreateProj({ orgId, orgProjects, setOrgProjects }) {
   
   const [newProj, setNewProj] = useState({
     name: '',
@@ -21,10 +21,42 @@ function CreateProj({ orgId }) {
     })
   }
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch(`/organizations/${orgId}/projects`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: newProj.name,
+        location: newProj.location,
+        start_date: newProj.startDate,
+        end_date: newProj.endDate,
+        description: newProj.description
+      })
+    }).then(r => {
+      if(r.ok) {
+        r.json().then(project => {
+          setOrgProjects([...orgProjects, project])
+          setNewProj({
+            name: '',
+            location: '',
+            startDate: '',
+            endDate: '',
+            description: '',
+          })
+        })
+      } else {
+        r.json().then(err => {
+          setErrors(err.errors)
+        })
+      }
+    })
+  }
+
   return (
     <div>
       <h1>Project Create Form</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Name: </label>
         <input
           type='text'
@@ -44,7 +76,7 @@ function CreateProj({ orgId }) {
         <label>Start Date: </label>
         <input
           type='text'
-          name='start_date'
+          name='startDate'
           placeholder='i.e. YYYY-MM-DD'
           value={newProj.startDate}
           onChange={handleChange}
@@ -52,7 +84,7 @@ function CreateProj({ orgId }) {
         <label>End Date: </label>
         <input
           type='text'
-          name='end_date'
+          name='endDate'
           placeholder='i.e. YYYY-MM-DD'
           value={newProj.endDate}
           onChange={handleChange}
@@ -67,6 +99,11 @@ function CreateProj({ orgId }) {
         />
         <button type='submit'>Submit</button>
       </form>
+      {errors.map(err => {
+        return (
+          <p key={err} style={{color: 'red'}}>{err}</p>
+        )
+      })}
       <button onClick={() => navigate(`/organizations/${orgId}`)}>Back</button>
     </div>
   )
