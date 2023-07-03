@@ -14,6 +14,19 @@ function DonationForm({ orgId }) {
     })
   }
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch('/donations', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        amount: donation.amount,
+        note: donation.note,
+        organization_id: orgId
+      })
+    })
+  }
+
   return (
     <div>
       <h1>Donation Form</h1>
