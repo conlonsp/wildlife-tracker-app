@@ -1,2 +1,27 @@
 class DonationsController < ApplicationController
+
+  def index
+
+  end
+
+  def create
+    user = User.find_by(id: session[:user_id])
+    organization = Organization.find_by(id: params[:organization_id])
+    user_organization = UserOrganization.find_or_create_by(user_id: user.id, organization_id: organization.id)
+    donation = user_organization.donations.build(donation_params)
+
+    if donation.save
+      render json: donation, status: :created
+    else
+      render json: { errors: ['Donation cannot be made.  Please try again.']}
+    end
+  end
+
+  private
+
+  def donation_params
+    params.permit(:amount, :note)
+  end
+
+
 end

@@ -4,11 +4,11 @@ class Donation < ApplicationRecord
   validates :amount, presence: true
   validates :amount, numericality: { only_integer: true }
 
-  before_create :create_user_organization
+  # before_create :create_user_organization
 
-  private
+  # private
 
-  def create_user_organization
-    self.user_organization ||= UserOrganization.create(user_id: self.user.id, organization_id: self.organization.id)
-  end
+  # def create_user_organization
+  #   self.user_organization ||= UserOrganization.create(user_id: session[:user_id], organization_id: params[:id])
+  # end
 end

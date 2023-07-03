@@ -1,2 +1,3 @@
 class UserOrganizationsController < ApplicationController
+  
 end
