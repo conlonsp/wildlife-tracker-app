@@ -61,7 +61,7 @@ function Organization({ organization, setOrganization, onDelete, grabId, orgProj
           <button onClick={() => navigate(`/organizations/${params.id}/update`)}>Update</button>
           <button onClick={deleteOrg}>Delete</button>
           <button onClick={() => navigate('/projects/create')}>New Project</button>
-          <DonationForm />
+          <DonationForm orgId={organization.id} />
         </div>
       :
         <p>{errors}</p>
