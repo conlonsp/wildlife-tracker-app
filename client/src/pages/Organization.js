@@ -2,6 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { UserContext } from '../Context'
 
+import DonationForm from '../components/DonationForm'
+
 function Organization({ organization, setOrganization, onDelete, grabId, orgProjects, setOrgProjects}) {
 
   const { user } = useContext(UserContext)
@@ -59,6 +61,7 @@ function Organization({ organization, setOrganization, onDelete, grabId, orgProj
           <button onClick={() => navigate(`/organizations/${params.id}/update`)}>Update</button>
           <button onClick={deleteOrg}>Delete</button>
           <button onClick={() => navigate('/projects/create')}>New Project</button>
+          <DonationForm />
         </div>
       :
         <p>{errors}</p>
