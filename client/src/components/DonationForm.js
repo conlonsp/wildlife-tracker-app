@@ -24,6 +24,15 @@ function DonationForm({ orgId }) {
         note: donation.note,
         organization_id: orgId
       })
+    }).then(r => {
+      if(r.ok) {
+        r.json().then(donation => {
+          setDonation({
+            amount: '',
+            note: '',
+          })
+        })
+      }
     })
   }
 
@@ -31,7 +40,7 @@ function DonationForm({ orgId }) {
     <div>
       <h1>Donation Form</h1>
       <p>{orgId}</p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type='number'
           name='amount'

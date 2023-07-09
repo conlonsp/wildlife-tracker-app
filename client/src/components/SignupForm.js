@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../Context";
 import { useNavigate } from "react-router-dom";
 
-function SignupForm({ setToLogin }) {
+function SignupForm({ setToLogin, setUserOrgs }) {
   const [newUser, setNewUser] = useState({
     username: '',
     password: '',
@@ -46,6 +46,7 @@ function SignupForm({ setToLogin }) {
             avatarUrl: '',
             bio: ''
           })
+          setUserOrgs(user.user_organizations)
           navigate('/')
         })
       } else {

@@ -10,6 +10,13 @@ function Dashboard() {
         <div>
           <h1>Dashboard</h1>
           <p>Welcome, {user.username}!</p>
+          {/* {user.user_organizations.map(uo => {
+            uo.donations.map(d => {
+              return (
+                <p>{d.amount}</p>
+              )
+            })
+          })} */}
         </div>
       :
         <div>
