@@ -25,20 +25,18 @@ function App() {
   const [errors, setErrors] = useState([])
   const [orgId, setOrgId] = useState(null)
   const [orgProjects, setOrgProjects] = useState([])
-  const [userOrgs, setUserOrgs] = useState(null)
 
   useEffect(() => {
     fetch('/me').then(r => {
       if(r.ok) {
         r.json().then(user => {
           setUser(user)
-          setUserOrgs(user.user_organizations)
         })
       }
     })
   }, [])
 
-  console.log(userOrgs)
+  
 
   useEffect(() => {
     fetch('/organizations')
@@ -78,9 +76,7 @@ function App() {
           <Dashboard />
         }/>
         <Route path='/loginsignup' element={
-          <LoginSignup
-            setUserOrgs={setUserOrgs}
-          />
+          <LoginSignup />
         }/>
         <Route path='/about' element={
           <About />

@@ -1,8 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../Context'
 
 function Dashboard() {
   const { user, setUser } = useContext(UserContext)
+
+  // const [userOrgs, setUserOrgs] = useState([])
+
+  // useEffect(() => {
+  //   fetch('/user_organizations')
+  //   .then(r => r.json())
+  //   .then(uos => setUserOrgs(uos))
+  // }, [])
+  
 
   return (
     <div>
@@ -10,13 +19,6 @@ function Dashboard() {
         <div>
           <h1>Dashboard</h1>
           <p>Welcome, {user.username}!</p>
-          {/* {user.user_organizations.map(uo => {
-            uo.donations.map(d => {
-              return (
-                <p>{d.amount}</p>
-              )
-            })
-          })} */}
         </div>
       :
         <div>

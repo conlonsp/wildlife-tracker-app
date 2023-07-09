@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import LoginForm from '../components/LoginForm'
 import SignupForm from '../components/SignupForm'
 
-function LoginSignup({ setUserOrgs }) {
+function LoginSignup() {
   const [toLogin, setToLogin] = useState(false)
 
   return (
     <div>
       {toLogin ?
-        <SignupForm setToLogin={setToLogin} setUserOrgs={setUserOrgs} />
+        <SignupForm setToLogin={setToLogin} />
       :
-        <LoginForm setToLogin={setToLogin} setUserOrgs={setUserOrgs}/>
+        <LoginForm setToLogin={setToLogin} />
       }
     </div>
   )

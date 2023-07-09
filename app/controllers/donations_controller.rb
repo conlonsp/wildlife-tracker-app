@@ -1,7 +1,9 @@
 class DonationsController < ApplicationController
 
   def index
-
+    user_orgs = UserOrganization.where(user_id: session[:user_id])
+    donations = user_orgs.flat_map(&:donations)
+    render json: donations, status: :ok
   end
 
   def create
