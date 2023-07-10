@@ -11,6 +11,7 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
+    "@observablehq/plot": "^0.6.9",
     "d3": "^7.8.5"
   }
 }
