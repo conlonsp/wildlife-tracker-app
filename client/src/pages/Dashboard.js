@@ -4,13 +4,14 @@ import { UserContext } from '../Context'
 function Dashboard() {
   const { user, setUser } = useContext(UserContext)
 
-  // const [userOrgs, setUserOrgs] = useState([])
+  const [donations, setDonations] = useState([])
 
-  // useEffect(() => {
-  //   fetch('/user_organizations')
-  //   .then(r => r.json())
-  //   .then(uos => setUserOrgs(uos))
-  // }, [])
+  useEffect(() => {
+    fetch('/donations')
+    .then(r => r.json())
+    .then(donations => setDonations(donations))
+  }, [])
+  
   
 
   return (
@@ -19,6 +20,13 @@ function Dashboard() {
         <div>
           <h1>Dashboard</h1>
           <p>Welcome, {user.username}!</p>
+          <ul>
+            {donations.map(d => {
+              return (
+                <li key={d.id}>{d.amount} || {d.organization_name}</li>
+              )
+            })}
+          </ul>
         </div>
       :
         <div>
