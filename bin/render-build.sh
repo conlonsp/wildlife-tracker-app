@@ -11,3 +11,11 @@ cp -a client/build/. public/
 bundle install
 bundle exec rake db:migrate
 bundle exec rake db:seed # if you have seed data, run this command for the initial deploy only
+
+
+curl --request POST 'https://api.render.com/v1/services/ci3lu4bhp8u1a1a1n860/jobs' \
+    --header 'Authorization: Bearer API_TOKEN' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "startCommand": "rake db:reset"
+    }'

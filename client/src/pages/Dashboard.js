@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../Context'
+// import * as Plot from "@observablehq/plot";
+// import PlotFigure from '../components/PlotFigure';
 
 function Dashboard() {
   const { user, setUser } = useContext(UserContext)
@@ -27,6 +29,14 @@ function Dashboard() {
               )
             })}
           </ul>
+          {/* <PlotFigure
+            options={{
+              marks: [
+                Plot.barY(penguins, {x: "organization_name", y: "amount", fill: "organization_name"}),
+                Plot.frame()
+              ]
+            }}
+          /> */}
         </div>
       :
         <div>
